@@ -5,7 +5,7 @@ const state: IContext = {
   currencyData: currencies,
   currencyFrom: currencies[0],
   currencyTo: currencies[1],
-  updateState: (newValues: { [key: string]: string }) => {},
+  updateState: () => {},
   wallet: '',
   email: '',
 };
