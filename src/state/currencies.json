@@ -1,0 +1,116 @@
+[
+  {
+    "name": "Cosmos",
+    "value": "0",
+    "code": "ATOM",
+    "icon": "cosmos"
+  },
+  {
+    "name": "Avalanche",
+    "value": "0",
+    "code": "AVAX",
+    "icon": "avalanche"
+  },
+  {
+    "name": "Bitcoin Cash",
+    "value": "0",
+    "code": "BCH",
+    "icon": "bitcoin cash"
+  },
+  {
+    "name": "Binance Coin",
+    "value": "0",
+    "code": "BNB",
+    "icon": "binance coin"
+  },
+  {
+    "name": "Bitcoin",
+    "value": "0",
+    "code": "BTC",
+    "icon": "bitcoin"
+  },
+  {
+    "name": "Dai",
+    "value": "0",
+    "code": "DAI",
+    "icon": "dai"
+  },
+  {
+    "name": "Dash",
+    "value": "0",
+    "code": "DASH",
+    "icon": "dash"
+  },
+  {
+    "name": "Dogecoin",
+    "value": "0",
+    "code": "DOGE",
+    "icon": "dogecoin"
+  },
+  {
+    "name": "Pollkadot",
+    "value": "0",
+    "code": "DOT",
+    "icon": "pollkadot"
+  },
+  {
+    "name": "Ethereum",
+    "value": "0",
+    "code": "ETH",
+    "icon": "ethereum"
+  },
+  {
+    "name": "Litecoin",
+    "value": "0",
+    "code": "LTC",
+    "icon": "litecoin"
+  },
+  {
+    "name": "Terra",
+    "value": "0",
+    "code": "LUNA",
+    "icon": "terra"
+  },
+  {
+    "name": "Polygon",
+    "value": "0",
+    "code": "MATIC",
+    "icon": "polygon"
+  },
+  {
+    "name": "Solana",
+    "value": "0",
+    "code": "SOL",
+    "icon": "solana"
+  },
+  {
+    "name": "Tron",
+    "value": "0",
+    "code": "TRX",
+    "icon": "tron"
+  },
+  {
+    "name": "Uniswap",
+    "value": "0",
+    "code": "UNI",
+    "icon": "uniswap"
+  },
+  {
+    "name": "Stellar",
+    "value": "0",
+    "code": "XLM",
+    "icon": "stellar"
+  },
+  {
+    "name": "Ripple",
+    "value": "0",
+    "code": "XRP",
+    "icon": "ripple"
+  },
+  {
+    "name": "Tezos",
+    "value": "0",
+    "code": "XTZ",
+    "icon": "tezos"
+  }
+]

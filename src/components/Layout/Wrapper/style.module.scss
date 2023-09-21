@@ -1,0 +1,10 @@
+.pageWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .contentWrapper {
+        width: 50%;
+    }
+}
