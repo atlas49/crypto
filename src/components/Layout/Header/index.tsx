@@ -3,6 +3,14 @@ import telegramLogo from './Telegram_logo.png';
 
 import style from './style.module.scss';
 
+const headerLinks = [
+  { label: 'Privacy Policy', path: '/privacy' },
+  { label: 'Guarantees', path: '/guarantees' },
+  { label: 'Faq', path: '/faq' },
+  { label: 'Partners', path: '/partners' },
+  { label: 'Support', path: '/support' },
+];
+
 const SocialButton = ({ icon = '', label = '' }) => {
   return (
     <button className={style.socialButton}>
@@ -20,13 +28,13 @@ const Header = () => {
   return (
     <nav className={style.header}>
       <div className={style.links}>
-        <div className={style.logo}>
+        <a className={style.logo} href="/">
           <img src={logo} alt="logo" />
           <div>BITCHANGE</div>
-        </div>
+        </a>
 
-        {['Privacy Policy', 'Guarantees', 'Faq', 'Partners', 'Support'].map((el) => (
-          <Link key={el} label={el} />
+        {headerLinks.map((el) => (
+          <Link key={el.path} label={el.label} src={el.path} />
         ))}
       </div>
       <SocialButton icon={telegramLogo} label="Telegram" />
