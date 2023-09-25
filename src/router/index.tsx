@@ -1,4 +1,4 @@
-import { createHashRouter } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 import Wrapper from '@components/Layout/Wrapper';
 
 import Faq from '@pages/Faq';
@@ -8,10 +8,10 @@ import Privacy from '@pages/Privacy';
 import Partners from '@pages/Partners';
 import Guarantees from '@pages/Guarantees';
 
-const router = createHashRouter(
+const router = createBrowserRouter(
   [
     {
-      path: '/crypto',
+      path: '/',
       element: (
         <Wrapper>
           <Main />
@@ -58,8 +58,7 @@ const router = createHashRouter(
         </Wrapper>
       ),
     },
-  ],
-  { basename: '/' }
+  ]
 );
 
 export default router;
