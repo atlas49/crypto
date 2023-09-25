@@ -2,7 +2,7 @@
   "name": "crypto-ex",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://atlas49.github.io/crypto",
+  "homepage": ".",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -19,6 +19,9 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
     "sass": "^1.68.0"
+  },
+  "engines": {
+    "node": ">=16"
   },
   "devDependencies": {
     "@types/node": "^20.6.3",
