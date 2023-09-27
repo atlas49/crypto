@@ -10,6 +10,15 @@ interface ICurrencyBox {
   boxType: 'currencyFrom' | 'currencyTo';
 }
 
+const AdditionalInfo = ({ title = '', subTitle = '' }) => {
+  return (
+    <div className={style.additionalInfo}>
+      <p>{title}</p>
+      <p>{subTitle}</p>
+    </div>
+  );
+};
+
 const CurrencyBox: React.FC<ICurrencyBox> = (props) => {
   const state = useAppContext();
   const setNewData = (code: string, type: 'currencyFrom' | 'currencyTo') => {
@@ -33,8 +42,8 @@ const CurrencyBox: React.FC<ICurrencyBox> = (props) => {
         />
         <Dropdown
           data={state.currencyData}
-          onChange={(e) => {
-            setNewData(e.target.value, props.boxType);
+          onChange={(value) => {
+            setNewData(value, props.boxType);
           }}
           selectedData={state[props.boxType]}
         />
@@ -104,6 +113,20 @@ function App() {
         >
           Обменять
         </button>
+      </div>
+
+      <p>Лидер ринка по обмену цифрових валют</p>
+
+      <div className={style.additionalInfoBlock}>
+        <div>
+          <AdditionalInfo title="2000+" subTitle="Обменов" />
+          <AdditionalInfo title="100+" subTitle="Отзивов" />
+          <AdditionalInfo title="500+" subTitle="Клиентов" />
+        </div>
+        <div>
+          <AdditionalInfo title="1 000 000$+" subTitle="Резервов" />
+          <AdditionalInfo title="24/7" subTitle="Служба поддержки" />
+        </div>
       </div>
     </div>
   );

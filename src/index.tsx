@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
-import './index.css';
+import './index.scss';
 import router from './router';
 
 import AppContextProvider from '@state/context';
