@@ -13,10 +13,7 @@ import style from './style.module.scss';
 
 const headerLinks = [
   { label: 'Privacy Policy', path: '/privacy' },
-  { label: 'Guarantees', path: '/guarantees' },
   { label: 'Faq', path: '/faq' },
-  { label: 'Partners', path: '/partners' },
-  { label: 'Support', path: '/support' },
 ];
 
 function Header() {
@@ -49,7 +46,7 @@ function Header() {
               textDecoration: 'none',
             }}
           >
-            CRYPTO-EX
+            EXMOBIT
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -107,7 +104,7 @@ function Header() {
               textDecoration: 'none',
             }}
           >
-            CRYPTO-EX
+            EXMOBIT
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {headerLinks.map((page) => (

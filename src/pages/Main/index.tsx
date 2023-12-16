@@ -3,6 +3,12 @@ import { collection, addDoc } from 'firebase/firestore';
 import { useAppContext } from '@state/context';
 import Dropdown from '@components/Dropdown';
 import { db } from '../../database';
+import cryptoImg from './crypto.png'
+import AMLBot from './AMLBot.svg'
+import Bestchange from './Bestchange.svg'
+import PerfectMoney from './PerfectMoney.svg'
+import Card from './card.png'
+
 
 import style from './style.module.scss';
 
@@ -115,19 +121,55 @@ function App() {
         </button>
       </div>
 
-      <p>Лидер ринка по обмену цифрових валют</p>
+      <div className={style.additionalInfo}>
+        <div className={style.additionalInfoText}>
+          <h1>Infinite possibilities</h1>
+          <p>The cryptocurrency sector has undergone substantial development, emerging as a substantial global economic sector. Since its inception, it has transformed the financial landscape by:</p>
 
-      <div className={style.additionalInfoBlock}>
-        <div>
-          <AdditionalInfo title="2000+" subTitle="Обменов" />
-          <AdditionalInfo title="100+" subTitle="Отзивов" />
-          <AdditionalInfo title="500+" subTitle="Клиентов" />
+          <ul>
+            <li>
+              initiating the decentralization process,
+            </li>
+            <li>
+              demonstrating its capacity for security and anonymity,
+            </li>
+            <li>
+              introducing novel avenues for swift and cost-effective international fund transfers.
+            </li>
+          </ul>
+          <p>
+            With worldwide accessibility, minimal transaction fees, and rapid settlement times, cryptocurrencies have the potential to streamline cross-border payments and enhance financial inclusion for those without traditional banking access.
+          </p>
+          <p>
+            Based on our observations, it is evident that the growth and widespread adoption potential of cryptocurrencies will persist, captivating an ever-increasing number of new users.
+          </p>
         </div>
-        <div>
-          <AdditionalInfo title="1 000 000$+" subTitle="Резервов" />
-          <AdditionalInfo title="24/7" subTitle="Служба поддержки" />
+        <img src={cryptoImg} width={"340px"} alt="logo" />
+      </div>
+
+
+      <div className={style.additionalInfo}>
+        <img src={Card} width={"340px"} alt="logo" />
+        <div className={style.additionalInfoText}>
+          <h1>
+            Evolution from a fledgling startup to a prominent figure in the cryptocurrency market.</h1>
+          <p>
+            Established in 2019 by a cadre of cryptocurrency and blockchain experts, Crybex set out with the mission to develop an uncomplicated and accessible cryptocurrency exchange catering to a diverse user base, spanning from everyday individuals to corporate clients. Commencing with a modest office and team , we took a significant leap, transforming into one of the foremost companies in the global cryptocurrency exchange arena.
+          </p>
+          <p>
+            Today, Crybex stands as a collective of skilled professionals, offering a top-tier level of service and a comprehensive platform for the swift and secure exchange of cryptocurrencies and fiat money. Our services extend to clients across the majority of countries worldwide. </p>
         </div>
       </div>
+
+      <div className={style.partners}>
+        <h1>Our partners</h1>
+        <div>
+          <img src={AMLBot} alt="logo" />
+          <img src={Bestchange} alt="logo" />
+          <img src={PerfectMoney} alt="logo" />
+        </div>
+      </div>
+
     </div>
   );
 }

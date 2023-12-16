@@ -1,10 +1,39 @@
 @import '../../variabels.scss';
+$small: 300px;
+$medium: 900px;
+
 
 .mainPage {
   width: 100%;
 
   p {
     font-size: 24px;
+  }
+
+  .additionalInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+
+    @media screen and (max-width: $medium) {
+      flex-direction: column-reverse;
+
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .additionalInfoText {
+      width: 50%;
+    }
+
+  }
+
+  .partners {
+    text-align: center;
   }
 
   .walletForm {
@@ -54,6 +83,7 @@
             padding-left: 16px;
             margin-bottom: 12px;
             margin-right: 12px;
+
             &::placeholder {
               opacity: 0.6;
             }

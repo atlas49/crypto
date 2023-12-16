@@ -3,10 +3,9 @@ import Wrapper from '@components/Layout/Wrapper';
 
 import Faq from '@pages/Faq';
 import Main from '@pages/Main';
-import Support from '@pages/Support';
 import Privacy from '@pages/Privacy';
 import Partners from '@pages/Partners';
-import Guarantees from '@pages/Guarantees';
+import AboutUs from '@pages/AboutUs';
 
 const router = createBrowserRouter(
   [
@@ -27,10 +26,10 @@ const router = createBrowserRouter(
       ),
     },
     {
-      path: '/support',
+      path: '/about',
       element: (
         <Wrapper>
-          <Support />
+          <AboutUs />
         </Wrapper>
       ),
     },
@@ -47,14 +46,6 @@ const router = createBrowserRouter(
       element: (
         <Wrapper>
           <Partners />
-        </Wrapper>
-      ),
-    },
-    {
-      path: '/guarantees',
-      element: (
-        <Wrapper>
-          <Guarantees />
         </Wrapper>
       ),
     },
