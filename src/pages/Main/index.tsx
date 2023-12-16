@@ -9,21 +9,11 @@ import Bestchange from './Bestchange.svg'
 import PerfectMoney from './PerfectMoney.svg'
 import Card from './card.png'
 
-
 import style from './style.module.scss';
 
 interface ICurrencyBox {
   boxType: 'currencyFrom' | 'currencyTo';
 }
-
-const AdditionalInfo = ({ title = '', subTitle = '' }) => {
-  return (
-    <div className={style.additionalInfo}>
-      <p>{title}</p>
-      <p>{subTitle}</p>
-    </div>
-  );
-};
 
 const CurrencyBox: React.FC<ICurrencyBox> = (props) => {
   const state = useAppContext();
