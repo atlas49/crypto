@@ -4,6 +4,7 @@
   justify-content: center;
   border-radius: 0px 0px 12px 12px;
 
+
   .content {
     display: flex;
     flex-direction: row;
@@ -74,5 +75,18 @@
       width: 36px;
       height: 36px;
     }
+  }
+}
+
+.select {
+  background-color: unset;
+  color: inherit;
+  border-radius: 6px;
+  padding: 6px;
+
+  option {
+    color: white;
+    background-color: #141A28;
+    padding: 6px;
   }
 }

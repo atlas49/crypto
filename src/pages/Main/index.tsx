@@ -10,6 +10,7 @@ import PerfectMoney from './PerfectMoney.svg'
 import Card from './card.png'
 
 import style from './style.module.scss';
+import t from '../../locales';
 
 interface ICurrencyBox {
   boxType: 'currencyFrom' | 'currencyTo';
@@ -27,7 +28,7 @@ const CurrencyBox: React.FC<ICurrencyBox> = (props) => {
   return (
     <div className={style.currencyBox}>
       <p>
-        {props.boxType === 'currencyFrom' ? 'Отдам' : 'Получу'} {state[props.boxType]?.code}
+        {props.boxType === 'currencyFrom' ? t('send') : t('receive')} {state[props.boxType]?.code}
       </p>
       <div>
         <input
@@ -75,7 +76,7 @@ function App() {
   return (
     <div className={style.mainPage}>
       <p>
-        Обмен {state.currencyFrom?.name} ({state.currencyFrom?.code}) на {state.currencyTo?.name} ({state.currencyTo?.code})
+        {t('exchange')} {state.currencyFrom?.name} ({state.currencyFrom?.code})  {t('to')} {state.currencyTo?.name} ({state.currencyTo?.code})
       </p>
 
       <div className={style.walletForm}>
@@ -96,7 +97,7 @@ function App() {
         <div className={style.inputBox}>
           <input
             id="wallet"
-            placeholder="Введите номер кошелька"
+            placeholder={t("walletNumber")}
             onChange={(e) => {
               onChangeWallet(e.target.value);
             }}
@@ -107,31 +108,31 @@ function App() {
             createDoc();
           }}
         >
-          Обменять
+          {t("toExchange").toUpperCase()}
         </button>
       </div>
 
       <div className={style.additionalInfo}>
         <div className={style.additionalInfoText}>
-          <h1>Infinite possibilities</h1>
-          <p>The cryptocurrency sector has undergone substantial development, emerging as a substantial global economic sector. Since its inception, it has transformed the financial landscape by:</p>
+          <h1>{t("textPanel1Title")}</h1>
+          <p>{t("textPanel1P1")}</p>
 
           <ul>
             <li>
-              initiating the decentralization process,
+              {t("textPanel1Li1")}
             </li>
             <li>
-              demonstrating its capacity for security and anonymity,
+              {t("textPanel1Li2")}
             </li>
             <li>
-              introducing novel avenues for swift and cost-effective international fund transfers.
+              {t("textPanel1Li3")}
             </li>
           </ul>
           <p>
-            With worldwide accessibility, minimal transaction fees, and rapid settlement times, cryptocurrencies have the potential to streamline cross-border payments and enhance financial inclusion for those without traditional banking access.
+            {t("textPanel1P2")}
           </p>
           <p>
-            Based on our observations, it is evident that the growth and widespread adoption potential of cryptocurrencies will persist, captivating an ever-increasing number of new users.
+            {t("textPanel1P3")}
           </p>
         </div>
         <img src={cryptoImg} width={"340px"} alt="logo" />
@@ -142,17 +143,19 @@ function App() {
         <img src={Card} width={"340px"} alt="logo" />
         <div className={style.additionalInfoText}>
           <h1>
-            Evolution from a fledgling startup to a prominent figure in the cryptocurrency market.</h1>
+            {t("textPanel12itle")}
+          </h1>
           <p>
-            Established in 2019 by a cadre of cryptocurrency and blockchain experts, Crybex set out with the mission to develop an uncomplicated and accessible cryptocurrency exchange catering to a diverse user base, spanning from everyday individuals to corporate clients. Commencing with a modest office and team , we took a significant leap, transforming into one of the foremost companies in the global cryptocurrency exchange arena.
+            {t("textPanel2P1")}
           </p>
           <p>
-            Today, Crybex stands as a collective of skilled professionals, offering a top-tier level of service and a comprehensive platform for the swift and secure exchange of cryptocurrencies and fiat money. Our services extend to clients across the majority of countries worldwide. </p>
+            {t("textPanel2P2")}
+          </p>
         </div>
       </div>
 
       <div className={style.partners}>
-        <h1>Our partners</h1>
+        <h1> {t("partners")}</h1>
         <div>
           <img src={AMLBot} alt="logo" />
           <img src={Bestchange} alt="logo" />

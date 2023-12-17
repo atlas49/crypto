@@ -10,6 +10,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import style from './style.module.scss';
+import { getCookie, setCookie } from '../../../locales';
 
 const headerLinks = [
   { label: 'Privacy Policy', path: '/privacy' },
@@ -18,6 +19,15 @@ const headerLinks = [
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const [len, setLen] = React.useState(getCookie('len') || 'en');
+  const handleChange = (event: any) => {
+    setLen(event.target.value as string);
+    location.reload()
+  };
+
+  React.useEffect(() => {
+    setCookie('len', len)
+  }, [len])
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -88,6 +98,7 @@ function Header() {
               ))}
             </Menu>
           </Box>
+
           <Typography
             variant="h5"
             noWrap
@@ -113,8 +124,15 @@ function Header() {
               </Button>
             ))}
           </Box>
+          <select className={style.select} onChange={handleChange} defaultValue={len}>
+            <option value="en" >en</option>
+            <option value="ru" >ru</option>
+          </select>
         </Toolbar>
+
       </Container>
+
+
     </AppBar>
   );
 }
