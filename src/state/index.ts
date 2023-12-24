@@ -1,11 +1,10 @@
 import { IContext } from './context';
-import currencies from './currencies.json';
 
 const state: IContext = {
-  currencyData: currencies,
-  currencyFrom: currencies[0],
-  currencyTo: currencies[1],
-  updateState: () => {},
+  currencyData: [],
+  currencyFrom: null,
+  currencyTo: null,
+  updateState: () => { },
   wallet: '',
   email: '',
 };

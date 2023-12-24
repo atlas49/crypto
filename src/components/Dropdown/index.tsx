@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -25,6 +25,10 @@ const MenuProps = {
 };
 
 const Dropdown: React.FC<IDropdown> = ({ data, onChange, selectedData }) => {
+  const [selectedValue, setSelectedValue] = useState(selectedData?.code || '');
+  useEffect(() => {
+    setSelectedValue(selectedData?.code || '');
+  }, [selectedData]);
   return (
     <FormControl
       sx={{ m: 1, width: 300, mt: 3 }}
@@ -32,8 +36,9 @@ const Dropdown: React.FC<IDropdown> = ({ data, onChange, selectedData }) => {
     >
       <Select
         displayEmpty
-        value={selectedData?.code}
+        value={selectedValue}
         onChange={(e) => {
+          setSelectedValue(e.target.value);
           onChange(e.target.value);
         }}
         input={<OutlinedInput />}
