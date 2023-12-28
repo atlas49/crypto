@@ -1,8 +1,8 @@
 {
-    "exchange": "exchange",
+    "exchange": "Exchange",
     "to": "to",
-    "send": "send",
-    "receive": "receive",
+    "send": "Send",
+    "receive": "Receive",
     "walletNumber": "Enter wallet number",
     "toExchange": "exchange",
     "textPanel1Title": "Infinite possibilities",

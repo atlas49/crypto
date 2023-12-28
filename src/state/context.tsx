@@ -7,6 +7,7 @@ export type Currency = {
   name: string;
   code: string;
   value: string;
+  inBTC: string;
 };
 
 export interface IContext {
@@ -30,7 +31,7 @@ const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   };
   useEffect(() => {
     db.getData('currencies').then(currencies => {
-      updateState({ currencyData: currencies, currencyFrom:currencies[0], currencyTo:currencies[1] })
+      updateState({ currencyData: currencies, currencyFrom: currencies[0], currencyTo: currencies[1] })
     });
   }, [])
 

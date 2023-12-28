@@ -20,6 +20,7 @@ const MenuProps = {
       maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
       width: 250,
       padding: '12px 0px',
+      backgroundColor: "#006960 !important"
     },
   },
 };
@@ -32,7 +33,7 @@ const Dropdown: React.FC<IDropdown> = ({ data, onChange, selectedData }) => {
   return (
     <FormControl
       sx={{ m: 1, width: 300, mt: 3 }}
-      style={{ width: '150px', color: 'white', margin: '0px', height: '38px', backgroundColor: '#302935', borderRadius: '8px' }}
+      style={{ width: '150px', color: 'white', margin: '0px', height: '38px', backgroundColor: '#0069606b', borderRadius: '8px' }}
     >
       <Select
         displayEmpty

@@ -6,6 +6,7 @@ import Main from '@pages/Main';
 import Privacy from '@pages/Privacy';
 import Partners from '@pages/Partners';
 import AboutUs from '@pages/AboutUs';
+import Transaction from '@pages/Transaction';
 
 const router = createBrowserRouter(
   [
@@ -46,6 +47,14 @@ const router = createBrowserRouter(
       element: (
         <Wrapper>
           <Partners />
+        </Wrapper>
+      ),
+    },
+    {
+      path: '/transaction',
+      element: (
+        <Wrapper>
+          <Transaction />
         </Wrapper>
       ),
     },

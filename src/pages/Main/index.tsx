@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { collection, addDoc } from 'firebase/firestore';
 import { useAppContext } from '@state/context';
 import Dropdown from '@components/Dropdown';
@@ -12,53 +13,103 @@ import Card from './card.png'
 import style from './style.module.scss';
 import t from '../../locales';
 
-interface ICurrencyBox {
+const calculateReceive = (fromValue: string | undefined, fromBtc: string | undefined, toBtc: string | undefined) => {
+  if (fromValue && fromBtc && toBtc) {
+    const rate = +fromBtc / +toBtc;
+    return +fromValue * rate;
+  }
+  return 0
+}
+
+interface ICurrencyBoxProps {
   boxType: 'currencyFrom' | 'currencyTo';
 }
 
-const CurrencyBox: React.FC<ICurrencyBox> = (props) => {
+const CurrencyBox: React.FC<ICurrencyBoxProps> = ({ boxType }) => {
   const state = useAppContext();
-  const setNewData = (code: string, type: 'currencyFrom' | 'currencyTo') => {
+  const [inputValue, setInputValue] = useState(0);
+
+  const setNewData = (code: string) => {
     const currency = state.currencyData.find((el) => el.code === code);
     if (currency) {
-      state.updateState({ [type]: currency });
+      state.updateState({ [boxType]: currency });
     }
+  };
+
+  useEffect(() => {
+    setInputValue(
+      calculateReceive(
+        state.currencyFrom?.value,
+        state.currencyFrom?.inBTC,
+        state.currencyTo?.inBTC
+      )
+
+    );
+
+  }, [state.currencyFrom?.value]);
+
+  useEffect(() => {
+    state.updateState({
+      currencyTo: { ...state.currencyTo, value: inputValue },
+    });
+  }, [inputValue])
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    state.updateState({
+      [boxType]: { ...state[boxType], value: e.target.value },
+    });
   };
 
   return (
     <div className={style.currencyBox}>
       <p>
-        {props.boxType === 'currencyFrom' ? t('send') : t('receive')} {state[props.boxType]?.code}
+        {boxType === 'currencyFrom' ? t('send') : t('receive')}{' '}
+        {state[boxType]?.code}
       </p>
       <div>
         <input
-          value={state[props.boxType]?.value}
-          onChange={(e) => {
-            state.updateState({ [props.boxType]: { ...state[props.boxType], value: e.target.value } });
-          }}
+          type='number'
+          value={boxType === 'currencyFrom' ? state.currencyFrom?.value : inputValue}
+          onChange={handleInputChange}
         />
         <Dropdown
           data={state.currencyData}
-          onChange={(value) => {
-            setNewData(value, props.boxType);
-          }}
-          selectedData={state[props.boxType]}
+          onChange={(value) => setNewData(value)}
+          selectedData={state[boxType]}
         />
       </div>
     </div>
   );
 };
 
+
 function App() {
   const state = useAppContext();
+
+  const navigate = useNavigate();
+
   const createDoc = async () => {
     try {
-      const docRef = await addDoc(collection(db, 'transactions'), {
-        email: state.email,
+      const newTransaction = {
+
+        fromCurrency: {
+          name: state.currencyFrom?.name,
+          code: state.currencyFrom?.code
+        },
+        toCurrency: {
+          name: state.currencyTo?.name,
+          code: state.currencyTo?.code,
+        },
+        created: new Date(),
+        status: 'pending',
+        send: state.currencyFrom?.value,
+        receive: state.currencyTo?.value,
         wallet: state.wallet,
-        from: state.currencyFrom,
-        to: state.currencyTo,
-      });
+        email: state.email
+      }
+
+      const docRef = await addDoc(collection(db, 'transactions'), newTransaction);
+      navigate(`/transaction?id=${docRef.id}`)
       console.log('Document written with ID: ', docRef.id);
     } catch (e) {
       console.error('Error adding document: ', e);
