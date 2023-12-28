@@ -25,11 +25,32 @@ const TransactionContent = (props: {
 		<div className={style.status}>Статус: <span> {props.status === 'pending' ? 'ожидает оплаты' : 'Оплачено'}</span></div>
 	</div>
 }
+function convertTimestamp(timestamp: { seconds: number, nanoseconds: number }) {
+	// Отримання значень з об'єкта
+	var seconds = timestamp.seconds;
+	var nanoseconds = timestamp.nanoseconds;
+
+	// Створення об'єкту Date на основі значень секунд та наносекунд
+	var date = new Date(seconds * 1000 + nanoseconds / 1e6); // Переведення наносекунд в мілісекунди
+
+	// Отримання компонентів дати та часу
+	var day = date.getDate();
+	var month = date.getMonth() + 1; // Місяці в JavaScript починаються з 0
+	var year = date.getFullYear();
+
+	var hours = date.getHours();
+	var minutes = date.getMinutes();
+
+	// Форматування дати та часу
+	var formattedDate = `${day < 10 ? '0' : ''}${day}.${month < 10 ? '0' : ''}${month}.${year} ${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
+
+	return formattedDate;
+}
 
 type Transaction = {
 	fromCurrency: { name: string, code: string },
 	toCurrency: { name: string, code: string },
-	created: string,
+	created: { seconds: number, nanoseconds: number },
 	rateFixed: string,
 	status: string,
 	send: string,
@@ -54,10 +75,10 @@ const TransactionPage = () => {
 		{
 			transaction &&
 			<TransactionContent
-				fromCurrency={{ name: 'Trone', code: 'TRX' }}
-				toCurrency={{ name: 'Dogecoin', code: 'DOGE' }}
-				created='16.07.2022 14:41'
-				rateFixed='16.07.2022 15:11:42'
+				fromCurrency={{ name: transaction.fromCurrency.name, code: transaction.fromCurrency.code }}
+				toCurrency={{ name: transaction.toCurrency.name, code: transaction.toCurrency.code }}
+				created={convertTimestamp(transaction.created)}
+				rateFixed={convertTimestamp(transaction.created)}
 				status={transaction.status}
 				send={transaction.receive}
 				receive={transaction.receive}
