@@ -139,7 +139,7 @@ function App() {
         <div className={style.inputBox}>
           <input
             id="email"
-            placeholder="E-mail"
+            placeholder={t("username")}
             onChange={(e) => {
               onChangeEmail(e.target.value);
             }}

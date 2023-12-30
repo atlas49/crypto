@@ -1,4 +1,5 @@
 {
+    "username": "Username",
     "exchange": "Exchange",
     "to": "to",
     "send": "Send",
@@ -70,5 +71,23 @@
     "47": "We do not knowingly collect personally identifiable information from anyone under the age of 18. If we learn that we have collected Personal Information from children without parental consent, we take steps to remove that information from our servers. If you are a parent or guardian and you know that your children have provided us with Personal Information, please contact us.",
     "48": "CHANGES TO THIS PRIVACY POLICY",
     "49": "We may updаte our User Privacy and Security Policy over time. We will communicate any changes by posting information on this page. In this case, the “effective date” item at the top of this Privacy Policy will change.",
-    "50": "It is recommended that you periodically review the Privacy and Personal Data Protection Policy page. Changes to this Policy are effective when they are posted on this page."
+    "50": "It is recommended that you periodically review the Privacy and Personal Data Protection Policy page. Changes to this Policy are effective when they are posted on this page.",
+    "51": "What is Exmobit?",
+    "52": "Exmobit is an online service for exchanging virtual assets and fiat currencies. Our service is designed for fast and reliable online cryptocurrency exchange. We also have a service for exchanging cryptocurrencies for cash.",
+    "53": "I don’t always have access to a PC. Does Exmobit have a mobile version of the website?",
+    "54": "The Exmobit website is available for both desktop and mobile. Our service is constantly improving to ensure users enjoy the exchange experience.",
+    "55": "What feedback channels do you have?",
+    "56": "To contact the support team, you can use the online chat on the service’s website, write in",
+    "57": "What is the average processing time for Exmobit orders?",
+    "58": "The processing time varies for different exchange destinations. Usually, processing takes up to 30 minutes from when the order is paid. In the case of cash exchanges, the average transaction time is up to 24 hours.",
+    "59": "I need more money for the maximum limit for my exchange direction. How can I exchange amounts above the limit?",
+    "60": "If the maximum exchange amount for the direction you are interested in is less than the required amount, contact the operator in",
+    "61": "I want to exchange an amount lower than the minimum. How can I do it?",
+    "62": "If the minimum exchange amount for the destination you are interested in is higher than the required amount, contact the operator in",
+    "63": "What guarantees does Exmobit provide?",
+    "64": "The service was launched in 2019 and has proven itself in the cryptocurrency market, providing offline and online exchanges, favorable rates, and high security. Exmobit is on the list of the most popular monitoring services including",
+    "65": "the most famous and reliable monitoring service for exchangers. Our service has many reviews on public resources such as",
+    "66": "and",
+    "67": "Thus, each user can read the reviews and make sure of the positive reputation of the online exchanger.",
+    "68": "We value our reputation and try to do everything possible to make the exchange convenient and not cause any difficulties for the user. Moreover, our team tries to provide such a level of service that customers come back to us with a smile and confidence in the exchange’s security."
 }
